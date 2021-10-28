@@ -1,0 +1,504 @@
+/* ------------------------------------- */
+/* ---------DEFAULT SETUP--------------- */
+/* -------(Setup mac. dinh.)-------------- */
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+html{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #ffffff;
+    text-rendering: optimizeLegibility;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------- */
+/* ------------REUSABLE COMPONENT------------- */
+/* ----(thanh` phan` thuong` duoc su? dung.)---- */
+
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: #e67e22;
+    padding: 15px 30px;
+    border-radius: 20px;
+    /* do cong cua border */
+    margin: 0 5px;
+    display: inline-block;
+    width: 190px;
+    text-align: center;
+    /* can giua chu trong border */
+    transition: all .1s;
+    /* transition: hoat canh trong border */
+}
+
+.btn:hover,
+.btn:active{
+    background-color: #b35400;
+}
+
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+h1,h2,h3{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+h1{
+    font-size: 300%;
+    font-weight: 400;
+    /* kieu chu va do day` cua chu~ */
+    word-spacing: 5px;
+    /* khoang cach giua cac chu~ */
+    color: white;
+    line-height: 135%;
+    /* khoang cach giua cac dong` */
+    margin-bottom: 50px;
+}
+
+h2{
+    color: #e67e22;
+    font-size: 180%;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2::after{
+    content: " ";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: rgba(230, 125, 34,0.5);
+    margin: 0 auto;
+}
+
+h3{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #265077;
+    color: white;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.p-long{
+    text-align: center;
+    color: #265077;
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 70%;
+    margin-left:15%;
+    line-height: 140%;
+}
+
+section{
+    padding: 20px;
+}
+
+.small-icon{
+    color: #5289bd;
+    font-size: 130%;
+    margin-right: 10px;
+}
+
+/* --------------------------------------------------------------------- */
+/* ---------------------- HEADER -------------------------------------- */
+/* --------------------(phan` header)--------------------------------- */
+header{
+    background-image: linear-gradient(45deg,rgba(2,33,64,0.8) 55%,rgba(45,95,93,0.85)), url("../img/background4.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* view height */
+    background-attachment: fixed;
+}
+
+.logo{
+    width: 350px;
+    float: left;
+    margin-left: 70px;
+    margin-top: -50px;
+    margin-bottom: -100px;
+}
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-right: 50px;
+    margin-top: 55px
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-right: 30px;
+
+}
+
+.main-nav li a{
+    text-decoration: none;
+    color: white;
+    font-size: 110%;
+    font-weight: 700%;
+    transition: border-bottom 0.5s;
+    /* transition: do tre cua thuoc tinh */
+    padding: 3px 0;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #cccccc;
+    /* hoat canh gach chan */
+}
+
+
+
+
+.heading-main-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -55%);
+    /* ki thuat can giua */
+    width: 1140px;
+}
+/* ------------------------------------------------ */
+/* ----------------STICKY-------------------------- */
+/* ----------------------------------------------- */
+.sticky{
+    background-color: rgb(2,33,64, .9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.sticky .logo{
+    width: 250px;
+    margin-top: -40px;
+    margin-bottom: -70px;
+}
+.sticky .main-nav{
+    margin-top: 30px;
+}
+/* ----------------mobile navigation icon-------------------- */
+.mobile-nav-icon{
+    font-size: 200%;
+    color: #e0e0e0;
+    position: absolute;
+    top: 55px;
+    right: 50px;
+    display: none;
+}
+.sticky .mobile-nav-icon{
+    top: 30px;
+}
+
+/* ----------------------------------------------- */
+/* -------------ABOUT SECTION--------------------- */
+/* ----------------------------------------------- */
+.about-picture{
+    position:relative;
+    margin-top: 50px;
+}
+
+.about-picture img{
+    width: 90%;
+    border-radius: 20px;
+    border: 4px solid #c5dff7;
+    box-shadow: 0px 5px 15px 5px #265077;
+    transition: all .7s;
+    /* x,y, độ mờ, độ phóng rộng,màu */
+    /* filter: brightness(55%) blur(2px); */
+}
+.picture-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color:#c5dff7;
+    transform: translate(-65%,-50%);
+    opacity: 0;
+    transition: all .7;
+}
+
+.about-picture:hover img,
+.about-picture:active img{
+    filter: brightness(55%) blur(2px);
+}
+
+.about-picture:hover .picture-title,
+.about-picture:active .picture-title{
+    transform: translate(-65%,-50%);
+    opacity: 1;
+}
+
+/* -------------------------------------------------------- */
+/* ---------------- Products---------------------------- */
+/* ---------------------------------------------------- */
+.products-section{
+    background-color: #f4f4f4;
+
+}
+.products-section h2{
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.product-box{
+    background-color: #eeefff;
+    box-shadow: 3px 5px 10px #e0e0e0;
+    width: 90%;
+    height: 350px;
+}
+
+.product-price{
+    color: #265077;
+    font-size: 250%;
+    font-weight: 300;
+    text-align: center;
+}
+
+.product-price span{
+    font-size: 80%;
+}
+
+.product-box ul li{
+    margin-left: 20%;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-box .btn{
+    margin-left: 20%;
+}
+/* --------------------------------------------- */
+/* ------------TESTIMONIALS---------------------- */
+/* ------------------------------------------- */
+
+.testimonials-section{
+    background-image: linear-gradient(45deg,rgba(2,33,64,0.8) 55%,rgba(45,95,93,0.85)), url('../img/background2.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.testimonials-section h2{
+    margin-bottom: 70px;
+}
+
+blockquote{
+    width: 95%;
+    position: relative;
+    font-style: italic;
+    line-height: 140%;
+    color: white;
+}
+
+blockquote::before{
+    content: '\201C';
+    font-size: 400%;
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+cite{
+    display: block;
+    color: #b4d6f5;
+    margin-top: 25px
+    }
+
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    border: 2px #265077;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+/* -------------------------------------------- */
+/* ----------------SPONSORS SECTION------------ */
+/* ------------------------------------------- */
+
+.sponsors-section{
+    background-color: #f4f4f4;
+
+}
+
+.sponsors-section h2{
+    margin-bottom: 50px;
+}
+
+.sponsors-showcase{
+    margin-left: 7%;
+}
+
+.sponsors-showcase li{
+    list-style: none;
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.logo-sponsor{
+    width: 140px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+figcaption{
+    color: #265077;
+    font-weight: 900;
+    font-size: 120%;
+}
+
+.sponsors-showcase li .logo-sponsor:hover,
+.sponsors-showcase li .logo-sponsor :active{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/* ------------------------------------------- */
+/* --------------CONTACT FORM---------------- */
+/* ----------------------------------------- */
+.contact-section{
+    background-image: linear-gradient(45deg,rgba(2,33,64,0.8) 55%,rgba(45,95,93,0.85)), url('../img/background5.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.information{
+    list-style: none;
+    color: white;
+    line-height: 200%;
+    margin-top: 70px;
+    word-spacing: 1px;
+    font-size: 95%;
+}
+
+.information .small-icon{
+    color: #378ad8;
+}
+.information .small-icon:hover,
+.information .small-icon:active{
+    transform: scale(1.3);
+}
+
+.social-icons{
+    margin-top: 50px;
+    list-style: none;
+}
+
+.social-icons li{
+    display: inline-block;
+    font-size: 250%;
+    margin-left: 20px;
+    color: white;
+}
+
+.social-icons li i:hover,
+.social-icons li i:active{
+    transform: scale(1.3);
+    color: #e67e22;
+}
+
+.social-icons li i{
+    transition: all .3s;
+    cursor: pointer;
+}
+
+/* -----------FORM---------------- */
+
+form{
+    background-color: rgba(0, 0, 0, .4);
+    margin-left: 40%;
+    width: 70%;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+form .row{
+    margin-bottom: 20px;
+}
+
+label{
+    font-size: 150%;
+    color: white;
+}
+
+input, textarea{
+    outline: none;
+    padding: 30px;
+    background-color: rgba(243, 235, 235, 0.884);
+    border: 1px solid rgba(48, 47, 47, 0.8);
+    margin-left: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input{
+    height: 50px;
+}
+
+textarea{
+    resize: none;
+    height: 100px;
+}
+
+input[type=text], input[type=email], textarea{
+    width: 80%;
+    font-size: 100%;
+}
+
+input[type=text], input[type=email]:focus, textarea{
+    color: white;
+    background-color: rgba(17, 17, 17, 0.8);
+    transition: all .3s;
+}
+
+form .row:last-of-type{
+    text-align: center;
+}
+
+input[type=submit]{
+    font-weight: 700;
+    font-size: 100%;
+    text-align: center;
+    border-radius: 5px;
+    width: 60%;
+}
+
+
+/* ------------------------------------------- */
+/* -------------------FOOTER------------------- */
+/* -------------------------------------------- */
+
+footer{
+    text-align: center;
+    background-color: #413f3f;
+    color:white;
+    padding: 20px;
+}
